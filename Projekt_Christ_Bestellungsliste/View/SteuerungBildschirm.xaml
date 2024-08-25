@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Projekt_Christ_Bestellungsliste.View.SteuerungBildschirm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Projekt_Christ_Bestellungsliste.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="1" Grid.Row="1" Command="{Binding AddColaCommand}">Cola</Button>
+        <Button Grid.Column="3" Grid.Row="1" Command="{Binding AddPizzaCommand}">Pizza</Button>
+        <Button Grid.Column="5" Grid.Row="1" Command="{Binding AddAlkoholCommand}">Bier</Button>
+        <Button Grid.Row="3" Grid.Column="1" Command="{Binding AddTicket1Command}" CommandParameter="DT1h">1h Internet</Button>
+        <Button Grid.Row="3" Grid.Column="3" Command="{Binding AddTicket12Command}" CommandParameter="DT12h">12h Internet</Button>
+        <Button Grid.Row="3" Grid.Column="5" Command="{Binding AddTicket24Command}" CommandParameter="DT24h">24h Internet</Button>
+        <CheckBox VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" IsChecked="{Binding BitAndBiteCard}" Margin="0,22,0,0">BitAndBiteCard</CheckBox>
+        <Button Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3" FontSize="20">Bestellung aufgeben</Button>
+        <Button Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="3" FontSize="20"> Reset</Button>
+        <DataGrid Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="3" Grid.RowSpan="8" AutoGenerateColumns="False" ItemsSource="{Binding Warenkorb}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Preis}" Header="Preis"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

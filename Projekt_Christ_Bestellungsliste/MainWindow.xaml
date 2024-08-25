@@ -1,0 +1,19 @@
+﻿<Window x:Class="Projekt_Christ_Bestellungsliste.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt_Christ_Bestellungsliste"
+        xmlns:View="clr-namespace:Projekt_Christ_Bestellungsliste.View"
+        xmlns:ViewModel="clr-namespace:Projekt_Christ_Bestellungsliste.ModelView"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <View:SteuerungBildschirm/>
+        <Grid.DataContext>
+            <ViewModel:BestellListeViewModel/>
+        </Grid.DataContext>
+
+
+    </Grid>
+</Window>
